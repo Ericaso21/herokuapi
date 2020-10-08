@@ -1,6 +1,10 @@
 <?php
     require_once("Backend/Config/Config.php");
     require_once("Backend/Helpers/Helpers.php");
+    header('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE');
+    header('content-type: application/json; charset=utf-8');
     $url = !empty( $_GET['url']) ?  $_GET['url'] : 'home/home';
     $arrUrl = explode("/", $url);
     $controller = $arrUrl[0];
