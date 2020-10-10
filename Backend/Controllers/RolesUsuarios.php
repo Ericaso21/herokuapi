@@ -9,9 +9,10 @@
         public function rolesUsuarios()
         {
             $data['page_id'] = 6;
-            $data['page_tag'] = "Roles";
-            $data['page_name'] = "Roles usuarios";
-            $data['page_title'] = "Roles usuarios";
+            $data['page_tag'] = "Role";
+            $data['page_title'] = "Roles-Usuarios";
+            $data['page_name'] = "Parkingsoft";
+            $data['page_functions_js'] = "functions_roles.js";
             $this->api->getApi($this,"rolesUsuarios",$data);
         }
 
@@ -46,12 +47,12 @@
                     $strDescripcion = intval($_POST['txtDescripcion']);
                     $intstatus = intval($_POST['listStatus']);
                     if ($strIdRol == 0) {
-                        //crea un nuevo usuario
+                        //crea un nuevo rol
                         $request_usuarios = $this->model->insertRol($strNombreRol, $strDescripcion, $intstatus);
                         $option = 1;
                     } else {
-                        // Actualiza un usuario
-                        $request_usuarios = $this->model->updateUsuario($strIdRol,$strNombreRol, $strDescripcion, $intstatus);
+                        // Actualiza un rol
+                        $request_usuarios = $this->model->updateRol($strIdRol,$strNombreRol, $strDescripcion, $intstatus);
                         $option = 2;
                     }
 
