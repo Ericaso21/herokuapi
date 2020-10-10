@@ -65,7 +65,7 @@
             if (empty($request))
             {
                 $query_insert = "INSERT INTO usuario(num_documento, pk_fk_id_tp_documento, fk_id_genero, nom_usuario, prim_nom,
-                seg_nombre, prim_apellido, seg_apellido, correo_electronico, contraseña) VALUES(?,?,?,?,?,?,?,?,?,?)";
+                seg_nombre, prim_apellido, seg_apellido, correo_electronico, password) VALUES(?,?,?,?,?,?,?,?,?,?)";
                 $arrData = array($this->strDocumento, $this->intTpDocumento, $this->intGenero, $this->strUsuario, $this->strNom1,
                 $this->strNom2, $this->strApel1, $this->strApel2, $this->strEmail, $this->strPassword);
                 $request_insert = $this->insert($query_insert,$arrData);
