@@ -35,18 +35,18 @@
             return $request;
         }
         //Actualiza los datos de un tipo de vehiculo
-        public function updateTpVehiculo(int $strIdTipoVehiculo, string $strNomVehiculo)
+        public function updateTpVehiculo(int $intIdTipoVehiculo, string $strNomVehiculo)
         {
 
-            $this->intIdTipoVehiculo = $strIdTipoVehiculo;
+            $this->intIdTipoVehiculo = $intIdTipoVehiculo;
             $this->strNomVehiculo = $strNomVehiculo;
 
-            $sql = "SELECT * FROM tipo_vehiculo WHERE nom_vehiculo = '{$this->strNomVehiculo}' AND id_tp_vehiculo != '{$this->strIdTipoVehiculo}'";
+            $sql = "SELECT * FROM tipo_vehiculo WHERE nom_vehiculo = '{$this->strNomVehiculo}' AND id_tp_vehiculo != '{$this->intIdTipoVehiculo}'";
             $request = $this->select_all($sql);
 
             if(empty($request))
             {
-                $sql = "UPDATE tipo_vehiculo SET nom_vehiculo = ? WHERE id_tp_vehiculo = $this->strIdTipoVehiculo";
+                $sql = "UPDATE tipo_vehiculo SET nom_vehiculo = ? WHERE id_tp_vehiculo = $this->intIdTipoVehiculo";
                 $arrData = array($this->strNomVehiculo);
                 $request = $this->update($sql,$arrData);
             }else {

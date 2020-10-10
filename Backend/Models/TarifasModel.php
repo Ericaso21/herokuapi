@@ -17,7 +17,7 @@
         public function selectTarifas()
         {
             //extrae usuarios
-            $sql = "SELECT * FROM tipo_vehiculo as tp INNER JOIN tarifas as t ON t.fk_id_tp_vehiculo = tp.id_tp_vehiculo WHERE id_tarifas != 0;  ";
+            $sql = "SELECT * FROM tipo_vehiculo tp INNER JOIN tarifas t ON t.fk_id_tp_vehiculo = tp.id_tp_vehiculo WHERE id_tarifas != 0;  ";
             $request = $this->select_all($sql);
             return $request;
         }

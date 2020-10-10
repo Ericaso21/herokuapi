@@ -6,7 +6,7 @@
             session_start();
             session_unset();
             session_destroy();
-            header('location: '.base_url_frontend().'/login');
+            header('location: http://localhost/pruebahtml/index.html');
         }
     }
 ?>

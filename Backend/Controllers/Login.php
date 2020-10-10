@@ -29,7 +29,7 @@
                         $arrResponse = array('status' => false, 'msg' => 'El usuario o la contraseña es incorrecto.' );
                     }else{
                         $arrData = $requestUser;
-                        if($arrData['status'] == 0){
+                        if($arrData['estado'] == 0){
                             $_SESSION['idUser'] = $arrData['num_documento'];
                             $_SESSION['login'] = true;
                             $arrResponse = array('status' => true, 'msg' => 'ok');

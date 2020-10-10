@@ -16,9 +16,9 @@
         {
             $this->strUsuario = $usuario;
             $this->strPassword = $password;
-            $sql = "SELECT num_documento,status FROM parkingsoft.usuario WHERE
+            $sql = "SELECT u.num_documento, pr.estado FROM usuario u inner join persona_rol pr on pr.pk_fk_num_documento = u.num_documento  WHERE
                     correo_electronico = '$this->strUsuario' AND
-                    contraseña = '$this->strPassword'";
+                    contrasena = '$this->strPassword'";
             $request = $this->select($sql);
             return $request;
         }

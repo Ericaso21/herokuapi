@@ -65,7 +65,7 @@
                 public function setTipoVehiculo()
                 {
                         if($_POST){
-                            $intIdTipoVehiculo = strval(strClean($_POST['idTpVehiculo']));
+                            $intIdTipoVehiculo = intval(strClean($_POST['idTpVehiculo']));
                             $strNomVehiculo = strClean($_POST['txtnomTp']);
                             if ($intIdTipoVehiculo == 0) {
                                 //crea un nuevo usuario
